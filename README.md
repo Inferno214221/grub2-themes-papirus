@@ -1,3 +1,10 @@
+# Fork Additions
+Papirus icon theme (https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) has been added as a theme option.
+
+I didn't make any of these images, only used the ones developer by [these people](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/blob/master/AUTHORS).
+
+Use `-i papirus` when installing.
+
 ![banner](banner.png?raw=true)
 
 ## Installation:
@@ -6,7 +13,7 @@ Usage:  `sudo ./install.sh [OPTIONS...]`
 
 ```
   -t, --theme     theme variant(s)          [tela|vimix|stylish|whitesur]       (default is tela)
-  -i, --icon      icon variant(s)           [color|white|whitesur]              (default is color)
+  -i, --icon      icon variant(s)           [color|white|whitesur|papirus]      (default is color)
   -s, --screen    screen display variant(s) [1080p|2k|4k|ultrawide|ultrawide2k] (default is 1080p)
   -r, --remove    Remove theme              [tela|vimix|stylish|whitesur]       (must add theme name option, default is tela)
 

@@ -89,7 +89,7 @@
               icon = mkOption {
                 default = "white";
                 example = "white";
-                type = types.enum [ "color" "white" "whitesur" ];
+                type = types.enum [ "color" "white" "whitesur" "papirus" ];
                 description = ''
                   The icon to use for grub2.
                 '';

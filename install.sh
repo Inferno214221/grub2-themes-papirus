@@ -12,7 +12,7 @@ THEME_DIR="/usr/share/grub/themes"
 REO_DIR="$(cd $(dirname $0) && pwd)"
 
 THEME_VARIANTS=('tela' 'vimix' 'stylish' 'whitesur')
-ICON_VARIANTS=('color' 'white' 'whitesur')
+ICON_VARIANTS=('color' 'white' 'whitesur' 'papirus')
 SCREEN_VARIANTS=('1080p' '2k' '4k' 'ultrawide' 'ultrawide2k')
 
 #################################
@@ -63,7 +63,7 @@ Usage: $0 [OPTION]...
 
 OPTIONS:
   -t, --theme     theme variant(s)          [tela|vimix|stylish|whitesur]       (default is tela)
-  -i, --icon      icon variant(s)           [color|white|whitesur]              (default is color)
+  -i, --icon      icon variant(s)           [color|white|whitesur|papirus]      (default is color)
   -s, --screen    screen display variant(s) [1080p|2k|4k|ultrawide|ultrawide2k] (default is 1080p)
   -r, --remove    Remove theme              [tela|vimix|stylish|whitesur]       (must add theme name option, default is tela)
 
@@ -296,11 +296,13 @@ run_dialog() {
     --radiolist "Choose icon style : " 15 40 5 \
       1 "white" off \
       2 "color" on \
-      3 "whitesur" off --output-fd 1 )
+      3 "whitesur" off \
+      4 "papirus" off --output-fd 1 )
       case "$tui" in
         1) icon="white"       ;;
         2) icon="color"       ;;
         3) icon="whitesur"    ;;
+        4) icon="papirus"     ;;
         *) operation_canceled ;;
      esac
 
@@ -579,6 +581,10 @@ while [[ $# -gt 0 ]]; do
             ;;
           whitesur)
             icons+=("${ICON_VARIANTS[2]}")
+            shift
+            ;;
+          papirus)
+            icons+=("${ICON_VARIANTS[3]}")
             shift
             ;;
           -*)
